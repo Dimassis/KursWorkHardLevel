@@ -1,18 +1,26 @@
 public class Main {
     public static void main(String[] args) {
-        Employee[] employee = new Employee[10];
-        employee[0] = new Employee("Mikel", 100000, 1);
-        employee[1] = new Employee("Franklin", 110000, 2);
-        employee[2] = new Employee("Trevor", 95000, 3);
-        employee[3] = new Employee("Lester", 120000, 4);
-        employee[4] = new Employee("Dave", 130000, 5);
-        employee[5] = new Employee("Lamar", 90000, 1);
-        employee[6] = new Employee("Steve", 84000, 2);
-        employee[7] = new Employee("Davin", 91000, 3);
-        employee[8] = new Employee("Jimi", 105000, 4);
-        employee[9] = new Employee("Bradly", 89000, 5);
+        EmployeeBook book = new EmployeeBook();
+        book.addEmployee("Dmitry", 100000,1);
+        book.removeEmployee(2);
+        book.removeEmployee(4);
+        book.maxSalary();
+        book.findIdEmployee(1);
+        book.sumSalary();
+        book.minSalary();
+        book.middleSalary();
+        book.indexSalary(1.05f);
+        book.checkDepartmentMaxSalary(4);
+        book.checkDepartmentMinSalary(3);
+        book.checkDepartmentMiddleSalary(1);
+        book.checkDepartmentSumSalary(1);
+        book.checkDepartmentIndexSalary(1, 1.1f) ;
+        book.checkDepartmentList(1);
+        book.salaryLessValue(110000);
+        book.salaryMoreValue(110000);
 
-        // Test easy
+        book.listEmployees();
+    /*    // Test easy
         Employee.listEmployees(employee);
         Employee.sumSalary(employee);
         Employee.maxSalary(employee);
@@ -30,6 +38,6 @@ public class Main {
         Employee.checkDepartmentList(employee, dep);
         Employee.salaryLessValue(employee, 110000);
         Employee.salaryMoreValue(employee, 110000);
-
+*/
     }
 }
