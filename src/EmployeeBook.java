@@ -2,7 +2,7 @@ import java.util.Objects;
 
 public class EmployeeBook {
 
-        private Employee[] employee = new Employee[11]; {
+    private Employee[] employee = new Employee[11]; {
         employee[0] = new Employee("Mikel", 100000, 1);
         employee[1] = new Employee("Franklin", 110000, 2);
         employee[2] = new Employee("Trevor", 95000, 3);
@@ -14,11 +14,6 @@ public class EmployeeBook {
         employee[8] = new Employee("Jimi", 105000, 4);
         employee[9] = new Employee("Bradly", 89000, 5);
     }
-    private String name;
-    private float salary;
-    private int department;
-    private int id = 0;
-    private static int count = 1;
     public void addEmployee(String name, int salary, int department) {
         int count = 0;
         if (!isBookFull()) {
@@ -41,7 +36,7 @@ public class EmployeeBook {
             if(array == null) {
                 continue;
             }
-            count++;
+            int count = 0;
             if (array.id == id) {
                 employee[id - 1] = null;
                 isRemoveEmployee = true;
@@ -226,35 +221,7 @@ public class EmployeeBook {
             }
         }
     }
-    public int getDepartment() {
-        return department;
-    }
-    public float getSalary() {
-        return salary;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setDepartment(int department) {
-        this.department = department;
-    }
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
-    @Override
-    public int hashCode() {
-        return Objects.hash(name);
-    }
-    public boolean equals(Employee employee) {
-        if (this.getName() != employee.getName() && this.getSalary() != employee.getSalary() && this.getDepartment() != employee.getDepartment() ) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-    public String toString() {
-        return id + ")" + getName() +  ", salary: " + getSalary() + ", Department: " + getDepartment();
-    }
+
     public boolean isBookFull() {
         for (Employee array : employee) {
             if (array == null) {
